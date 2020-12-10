@@ -42,15 +42,17 @@ namespace Calculator
         {
             if (FirstNumberIsNegative == true)
             {
+                int firstNumber = -1;
                 for (int i = 1; i < input.Length; i++)
                 {
+                    if (i != 1) firstNumber = 1;
                     if (input[i].Contains(","))
                     {
                         string newstr = input[i].Replace(',', '.');
-                        Numbers.Add(double.Parse(newstr));
+                        Numbers.Add(double.Parse(newstr)*firstNumber);
                     }
                     else
-                        Numbers.Add(double.Parse(input[i]));
+                        Numbers.Add(double.Parse(input[i])*firstNumber);
                 }
                 Operators.Remove(Operators.ElementAt(0));
             }
