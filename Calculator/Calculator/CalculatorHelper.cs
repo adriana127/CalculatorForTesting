@@ -16,7 +16,6 @@ namespace Calculator
         public List<char> Operators { get => operators; set => operators = value; }
         public List<double> Numbers { get => numbers; set => numbers = value; }
         public bool FirstNumberIsNegative { get => firstNumberIsNegative; set => firstNumberIsNegative = value; }
-       
 
         public void VerifyFirstNumberSign(String input)
         {
@@ -91,7 +90,7 @@ namespace Calculator
             string input = System.IO.File.ReadAllText(@"C:\Users\Adriana\Desktop\CalculatorForTesting\Calculator\Calculator\File.txt");
             try
             {
-               // ValidateInput(input);
+                ValidateInput(input);
                
                 VerifyFirstNumberSign(input);
 
