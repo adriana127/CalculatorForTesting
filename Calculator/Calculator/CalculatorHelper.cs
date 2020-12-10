@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
@@ -101,6 +102,7 @@ namespace Calculator
         }
         public string ReadFromFile(String fileName)
         {
+            if (!File.Exists(fileName)) throw new Exception("File not found.");
             return System.IO.File.ReadAllText(fileName);
         }
         public bool IsMultiplication(char operation)
