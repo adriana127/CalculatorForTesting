@@ -17,12 +17,13 @@ namespace CalculatorTesting
         [TestMethod]
         public void ConstructorShouldWorkProperly()
         {
-
+            CalculatorHelper calculator = new CalculatorHelper(@"C:\Users\Adriana\Desktop\CalculatorForTesting\Calculator\Calculator\File.txt");
             //Act
-            var result = calculator.Add(2.5, 5.2);
+            calculator.Calculate();
+            var result = calculator.GetResult();
 
             //Assert
-            Assert.AreEqual(7.7, result);
+            Assert.AreEqual(-7.4, result);
         }
 
        

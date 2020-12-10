@@ -102,7 +102,7 @@ namespace Calculator
         }
         public string ReadFromFile(String fileName)
         {
-            if (!File.Exists(fileName)) throw new Exception("File not found.");
+            if (!File.Exists(fileName)) throw new FileNotFoundException("File not found.");
             return System.IO.File.ReadAllText(fileName);
         }
         public bool IsMultiplication(char operation)
