@@ -5,3 +5,10 @@ E:\PeoplePower\TestingCalculator\CalculatorForTesting\Calculator\Calculator\obj\
 E:\PeoplePower\TestingCalculator\CalculatorForTesting\Calculator\Calculator\obj\Debug\Calculator.csproj.CoreCompileInputs.cache
 E:\PeoplePower\TestingCalculator\CalculatorForTesting\Calculator\Calculator\obj\Debug\Calculator.exe
 E:\PeoplePower\TestingCalculator\CalculatorForTesting\Calculator\Calculator\obj\Debug\Calculator.pdb
+C:\Users\Adriana\Desktop\CalculatorForTesting\Calculator\Calculator\bin\Debug\Calculator.exe.config
+C:\Users\Adriana\Desktop\CalculatorForTesting\Calculator\Calculator\bin\Debug\Calculator.exe
+C:\Users\Adriana\Desktop\CalculatorForTesting\Calculator\Calculator\bin\Debug\Calculator.pdb
+C:\Users\Adriana\Desktop\CalculatorForTesting\Calculator\Calculator\obj\Debug\Calculator.csprojAssemblyReference.cache
+C:\Users\Adriana\Desktop\CalculatorForTesting\Calculator\Calculator\obj\Debug\Calculator.csproj.CoreCompileInputs.cache
+C:\Users\Adriana\Desktop\CalculatorForTesting\Calculator\Calculator\obj\Debug\Calculator.exe
+C:\Users\Adriana\Desktop\CalculatorForTesting\Calculator\Calculator\obj\Debug\Calculator.pdb
