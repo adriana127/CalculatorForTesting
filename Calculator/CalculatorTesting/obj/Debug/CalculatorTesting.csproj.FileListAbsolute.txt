@@ -1,0 +1,17 @@
+E:\PeoplePower\TestingCalculator\CalculatorForTesting\Calculator\CalculatorTesting\bin\Debug\Microsoft.VisualStudio.TestPlatform.MSTest.TestAdapter.dll
+E:\PeoplePower\TestingCalculator\CalculatorForTesting\Calculator\CalculatorTesting\bin\Debug\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.Interface.dll
+E:\PeoplePower\TestingCalculator\CalculatorForTesting\Calculator\CalculatorTesting\bin\Debug\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.dll
+E:\PeoplePower\TestingCalculator\CalculatorForTesting\Calculator\CalculatorTesting\bin\Debug\CalculatorTesting.dll
+E:\PeoplePower\TestingCalculator\CalculatorForTesting\Calculator\CalculatorTesting\bin\Debug\CalculatorTesting.pdb
+E:\PeoplePower\TestingCalculator\CalculatorForTesting\Calculator\CalculatorTesting\bin\Debug\Calculator.exe
+E:\PeoplePower\TestingCalculator\CalculatorForTesting\Calculator\CalculatorTesting\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.dll
+E:\PeoplePower\TestingCalculator\CalculatorForTesting\Calculator\CalculatorTesting\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.Extensions.dll
+E:\PeoplePower\TestingCalculator\CalculatorForTesting\Calculator\CalculatorTesting\bin\Debug\Calculator.pdb
+E:\PeoplePower\TestingCalculator\CalculatorForTesting\Calculator\CalculatorTesting\bin\Debug\Calculator.exe.config
+E:\PeoplePower\TestingCalculator\CalculatorForTesting\Calculator\CalculatorTesting\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.xml
+E:\PeoplePower\TestingCalculator\CalculatorForTesting\Calculator\CalculatorTesting\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.Extensions.xml
+E:\PeoplePower\TestingCalculator\CalculatorForTesting\Calculator\CalculatorTesting\obj\Debug\CalculatorTesting.csprojAssemblyReference.cache
+E:\PeoplePower\TestingCalculator\CalculatorForTesting\Calculator\CalculatorTesting\obj\Debug\CalculatorTesting.csproj.CoreCompileInputs.cache
+E:\PeoplePower\TestingCalculator\CalculatorForTesting\Calculator\CalculatorTesting\obj\Debug\CalculatorTesting.csproj.CopyComplete
+E:\PeoplePower\TestingCalculator\CalculatorForTesting\Calculator\CalculatorTesting\obj\Debug\CalculatorTesting.dll
+E:\PeoplePower\TestingCalculator\CalculatorForTesting\Calculator\CalculatorTesting\obj\Debug\CalculatorTesting.pdb

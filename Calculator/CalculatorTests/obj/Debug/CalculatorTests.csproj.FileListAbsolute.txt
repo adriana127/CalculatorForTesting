@@ -1,0 +1,2 @@
+E:\PeoplePower\TestingCalculator\CalculatorForTesting\Calculator\CalculatorTests\obj\Debug\CalculatorTests.csprojAssemblyReference.cache
+E:\PeoplePower\TestingCalculator\CalculatorForTesting\Calculator\CalculatorTests\obj\Debug\CalculatorTests.csproj.CoreCompileInputs.cache

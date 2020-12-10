@@ -1,0 +1,7 @@
+E:\PeoplePower\TestingCalculator\CalculatorForTesting\Calculator\Calculator\bin\Debug\Calculator.exe.config
+E:\PeoplePower\TestingCalculator\CalculatorForTesting\Calculator\Calculator\bin\Debug\Calculator.exe
+E:\PeoplePower\TestingCalculator\CalculatorForTesting\Calculator\Calculator\bin\Debug\Calculator.pdb
+E:\PeoplePower\TestingCalculator\CalculatorForTesting\Calculator\Calculator\obj\Debug\Calculator.csprojAssemblyReference.cache
+E:\PeoplePower\TestingCalculator\CalculatorForTesting\Calculator\Calculator\obj\Debug\Calculator.csproj.CoreCompileInputs.cache
+E:\PeoplePower\TestingCalculator\CalculatorForTesting\Calculator\Calculator\obj\Debug\Calculator.exe
+E:\PeoplePower\TestingCalculator\CalculatorForTesting\Calculator\Calculator\obj\Debug\Calculator.pdb
