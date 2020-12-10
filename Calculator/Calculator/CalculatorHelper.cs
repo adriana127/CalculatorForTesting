@@ -12,6 +12,7 @@ namespace Calculator
         List<char> operators = new List<char>();
         List<double> numbers = new List<double>();
         bool firstNumberIsNegative = false;
+
         Calculator calculator=new Calculator();
         public List<char> Operators { get => operators; set => operators = value; }
         public List<double> Numbers { get => numbers; set => numbers = value; }
@@ -19,9 +20,7 @@ namespace Calculator
 
         public void VerifyFirstNumberSign(String input)
         {
-
            FirstNumberIsNegative = input[0].Equals('-');
-
         }
         public void ValidateInput(String input)
         {
@@ -47,8 +46,8 @@ namespace Calculator
                     if (i != 1) firstNumber = 1;
                     if (input[i].Contains(","))
                     {
-                        string newstr = input[i].Replace(',', '.');
-                        Numbers.Add(double.Parse(newstr)*firstNumber);
+                        string reformatedNumber = input[i].Replace(',', '.');
+                        Numbers.Add(double.Parse(reformatedNumber)*firstNumber);
                     }
                     else
                         Numbers.Add(double.Parse(input[i])*firstNumber);
@@ -67,9 +66,6 @@ namespace Calculator
                     else
                     {
                         double aux = double.Parse(input[i]);
-
-                            Console.WriteLine(input[i]);
-                        
                         Numbers.Add(aux);
                     }
                 }
@@ -84,28 +80,28 @@ namespace Calculator
             if (Operators.Count == Numbers.Count)
                 Operators.Remove(Operators.ElementAt(Operators.Count - 1));
         }
-
-        public void ReadFromFile()
+        public CalculatorHelper(String fileName)
         {
-            string input = System.IO.File.ReadAllText(@"C:\Users\Adriana\Desktop\CalculatorForTesting\Calculator\Calculator\File.txt");
             try
             {
-                ValidateInput(input);
-               
-                VerifyFirstNumberSign(input);
+                //ValidateInput(ReadFromFile(fileName));
 
-                CreateOperatorsList(input);
+                VerifyFirstNumberSign(ReadFromFile(fileName));
 
-                CreateNumbersList(input.Split(new char[] { '-', '+', '/', '*' }));
+                CreateOperatorsList(ReadFromFile(fileName));
+
+                CreateNumbersList(ReadFromFile(fileName).Split(new char[] { '-', '+', '/', '*' }));
 
                 VerifyNumberOfOperators();
-
             }
             catch (Exception e)
             {
                 Console.WriteLine(e.Message);
             }
-
+        }
+        public string ReadFromFile(String fileName)
+        {
+            return System.IO.File.ReadAllText(fileName);
         }
         public bool IsMultiplication(char operation)
         {
@@ -119,47 +115,46 @@ namespace Calculator
                 return true;
             return false;
         }
-
-        public void Calculate()
+        public void TreatMultiplicationCase()
         {
-            while(Numbers.Count>1)// cata vreme am mai mult de 2 nr pe care pot face operatii
+            for (int i = 0; i < Operators.Count; i++)
             {
-                if(Operators.Contains('*')|| (Operators.Contains('/'))) //verific sa vad daca mai exista */ in operatori
-                for(int i=0;i< Operators.Count;i++)
-                {// daca da il caut
-                 // cand am gasit operatia de grad una o execut si dau break
-                        if (Operators.ElementAt(i).Equals('*') || (Operators.ElementAt(i).Equals('/')))
-                        {
-                            if (IsMultiplication(Operators.ElementAt(i)))
-                                Numbers[i] = calculator.Multiply(Numbers.ElementAt(i), Numbers.ElementAt(i + 1));
-
-                            else
-                                Numbers[i] = calculator.Divide(Numbers.ElementAt(i), Numbers.ElementAt(i + 1));
-
-                            Numbers.Remove(Numbers.ElementAt(i + 1));
-                            Operators.Remove(Operators.ElementAt(i));
-
-                            break;
-                        }
-                }
-                else
+                if (Operators.ElementAt(i).Equals('*') || (Operators.ElementAt(i).Equals('/')))
                 {
-                    for (int i = 0; i < Operators.Count; i++)
-                    {// daca da il caut
-                        
-                            // cand am gasit operatia de grad una o execut si dau break
-                            if (IsAdd(Operators.ElementAt(i)))
-                            Numbers[i] = calculator.Add(Numbers.ElementAt(i), Numbers.ElementAt(i + 1));
-                            else
-                            Numbers[i] = calculator.Substraction(Numbers.ElementAt(i), Numbers.ElementAt(i + 1));
-                        Numbers.Remove(Numbers.ElementAt(i + 1));
-                        Operators.Remove(Operators.ElementAt(i));
-                        break;
-                        
-                    }
+                    if (IsMultiplication(Operators.ElementAt(i)))
+                        Numbers[i] = calculator.Multiply(Numbers.ElementAt(i), Numbers.ElementAt(i + 1));
+
+                    else
+                        Numbers[i] = calculator.Divide(Numbers.ElementAt(i), Numbers.ElementAt(i + 1));
+                    Numbers.Remove(Numbers.ElementAt(i + 1));
+                    Operators.Remove(Operators.ElementAt(i));
+                    break;
                 }
             }
-            
+        }
+        public void TreatAddCase()
+        {
+            for (int i = 0; i < Operators.Count; i++)
+            {
+                if (IsAdd(Operators.ElementAt(i)))
+                    Numbers[i] = calculator.Add(Numbers.ElementAt(i), Numbers.ElementAt(i + 1));
+                else
+                    Numbers[i] = calculator.Substraction(Numbers.ElementAt(i), Numbers.ElementAt(i + 1));
+                Numbers.Remove(Numbers.ElementAt(i + 1));
+                Operators.Remove(Operators.ElementAt(i));
+                break;
+
+            }
+        }
+        public void Calculate()
+        {
+            while(Numbers.Count>1)
+            {
+                if (Operators.Contains('*') || (Operators.Contains('/')))
+                    TreatMultiplicationCase();
+                else
+                    TreatAddCase();
+            }
         }
         public double GetResult()
         {

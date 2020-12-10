@@ -11,10 +11,9 @@ namespace Calculator
     {
         static void Main(string[] args)
         {
-            CalculatorHelper calculatorHelper = new CalculatorHelper();
+            CalculatorHelper calculatorHelper = new CalculatorHelper(@"C:\Users\Adriana\Desktop\CalculatorForTesting\Calculator\Calculator\File.txt");
             try
             {
-                calculatorHelper.ReadFromFile();
                 calculatorHelper.Calculate();
                 Console.WriteLine(calculatorHelper.GetResult());
 
