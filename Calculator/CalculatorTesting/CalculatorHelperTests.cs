@@ -19,14 +19,12 @@ namespace CalculatorTesting
         {
             CalculatorHelper calculator = new CalculatorHelper(@"C:\Users\Adriana\Desktop\CalculatorForTesting\Calculator\Calculator\File.txt");
             //Act
-            calculator.Calculate();
+            Calculator.Calculator calculator1 = new Calculator.Calculator();
+            calculator.Calculate(calculator1);
             var result = calculator.GetResult();
 
             //Assert
             Assert.AreEqual(-7.4, result);
         }
-
-       
-
     }
 }

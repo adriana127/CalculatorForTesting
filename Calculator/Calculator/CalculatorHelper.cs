@@ -13,23 +13,21 @@ namespace Calculator
         List<char> operators = new List<char>();
         List<double> numbers = new List<double>();
         bool firstNumberIsNegative = false;
-
-        Calculator calculator=new Calculator();
         public List<char> Operators { get => operators; set => operators = value; }
         public List<double> Numbers { get => numbers; set => numbers = value; }
         public bool FirstNumberIsNegative { get => firstNumberIsNegative; set => firstNumberIsNegative = value; }
 
-        public void VerifyFirstNumberSign(String input)
+        public void VerifyFirstNumberSign(String input) //Adriana
         {
            FirstNumberIsNegative = input[0].Equals('-');
         }
-        public void ValidateInput(String input)
+        public void ValidateInput(String input) //Lorena
         {
             Regex objExpressionPattern = new Regex(@"^-?\d+(\s*[-+*/]\s*\d+)+$");
             if (!objExpressionPattern.IsMatch(input))
                 throw new Exception("Invalid input format!");
         }
-        public void CreateOperatorsList(String input)
+        public void CreateOperatorsList(String input)  //Lorena
         {
             foreach (char character in input)
             {
@@ -37,7 +35,7 @@ namespace Calculator
                     Operators.Add(character);
             }
         }
-        public void CreateNumbersList(String[] input)
+        public void CreateNumbersList(String[] input) //Adriana
         {
             if (FirstNumberIsNegative == true)
             {
@@ -76,12 +74,12 @@ namespace Calculator
                 throw new Exception("Invalid number of operands.");
             }
         }
-        public void VerifyNumberOfOperators()
+        public void VerifyNumberOfOperators() //Lorena
         {
             if (Operators.Count == Numbers.Count)
                 Operators.Remove(Operators.ElementAt(Operators.Count - 1));
         }
-        public CalculatorHelper(String fileName)
+        public CalculatorHelper(String fileName) //Adriana
         {
             try
             {
@@ -100,24 +98,24 @@ namespace Calculator
                 Console.WriteLine(e.Message);
             }
         }
-        public string ReadFromFile(String fileName)
+        public string ReadFromFile(String fileName) //Lorena
         {
             if (!File.Exists(fileName)) throw new FileNotFoundException("File not found.");
             return System.IO.File.ReadAllText(fileName);
         }
-        public bool IsMultiplication(char operation)
+        public bool IsMultiplication(char operation) //Lorena
         {
             if (operation.Equals('*') )
                 return true;
             return false;
         }
-        public bool IsAdd(char operation)
+        public bool IsAdd(char operation)//Adriana
         {
             if (operation.Equals('+'))
                 return true;
             return false;
         }
-        public void TreatMultiplicationCase()
+        public void TreatMultiplicationCase(Calculator calculator)//Lorena
         {
             for (int i = 0; i < Operators.Count; i++)
             {
@@ -134,7 +132,7 @@ namespace Calculator
                 }
             }
         }
-        public void TreatAddCase()
+        public void TreatAddCase(Calculator calculator)//Adriana
         {
             for (int i = 0; i < Operators.Count; i++)
             {
@@ -148,17 +146,17 @@ namespace Calculator
 
             }
         }
-        public void Calculate()
+        public void Calculate(Calculator calculator) //Lorena+Adriana
         {
             while(Numbers.Count>1)
             {
                 if (Operators.Contains('*') || (Operators.Contains('/')))
-                    TreatMultiplicationCase();
+                    TreatMultiplicationCase(calculator);
                 else
-                    TreatAddCase();
+                    TreatAddCase(calculator);
             }
         }
-        public double GetResult()
+        public double GetResult()//Lorena+Adriana
         {
             return Numbers.ElementAt(0);
         }
