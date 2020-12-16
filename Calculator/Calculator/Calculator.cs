@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Calculator
 {
-    public class Calculator : IOperations
+    public class Calculator : ICalculator
     {
         public double Add(double number1, double number2)
         {
@@ -15,6 +15,8 @@ namespace Calculator
 
         public double Divide(double number1, double number2)
         {
+            if (number2 == 0)
+                throw new Exception("Can't divide by zero");
             return (number1 / number2);
         }
 

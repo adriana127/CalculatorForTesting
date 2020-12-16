@@ -215,5 +215,168 @@ namespace CalculatorTesting
             CalculatorHelper calculator = new CalculatorHelper();
             calculator.ReadFromFile(null);
         }
+
+        [TestMethod]
+        public void ConstructorShouldWorkProperly()
+        {
+            //Act
+            CalculatorHelper calculator = new CalculatorHelper(@"C:\MyFiles\Calculator-Test-WorkBranch\Calculator\Calculator\File.txt");
+            Calculator.Calculator calculator1 = new Calculator.Calculator();
+            calculator.Calculate(calculator1);
+            var result = calculator.GetResult();
+
+            //Assert
+            Assert.AreEqual(9, result);
+        }
+
+        [TestMethod]
+        public void ExpressionIsValid()
+        {
+            CalculatorHelper calculator = new CalculatorHelper(@"C:\MyFiles\Calculator-Test-WorkBranch\Calculator\Calculator\File.txt");
+            string input = "12+4/2-5*1";
+
+            Assert.IsTrue(calculator.ValidateInput(input));
+        }
+
+        [TestMethod]
+        public void CreatingOperatorsListShouldWorkProperly()
+        {
+            CalculatorHelper calculator = new CalculatorHelper();
+            List<char> Operators = new List<char>();
+            Operators.Add('+');
+            Operators.Add('/');
+            Operators.Add('-');
+            Operators.Add('*');
+
+            string input = "12+4/2-5*1";
+            calculator.CreateOperatorsList(input);
+
+            CollectionAssert.AreEqual(Operators, calculator.Operators);
+        }
+
+        [TestMethod]
+        public void VerifyingIfNumberOfOperatorsShouldWorkProperly()
+        {
+            CalculatorHelper calculator = new CalculatorHelper(@"C:\MyFiles\Calculator-Test-WorkBranch\Calculator\Calculator\File.txt");
+            List<char> Operators = new List<char>();
+            Operators.Add('+');
+            Operators.Add('/');
+            Operators.Add('-');
+            Operators.Add('*');
+
+            calculator.Operators = Operators;
+            Operators.RemoveAt(Operators.Count - 1);
+
+            List<double> Numbers = new List<double>();
+            Numbers.Add(4);
+            Numbers.Add(2);
+            Numbers.Add(5);
+            Numbers.Add(1);
+
+            calculator.Numbers = Numbers;
+            calculator.VerifyNumberOfOperators();
+
+            Assert.AreEqual(Operators, calculator.Operators);
+        }
+
+        [TestMethod]
+        public void ShouldCheckFileExists()
+        {
+            CalculatorHelper calculator = new CalculatorHelper(@"C:\MyFiles\Calculator-Test-WorkBranch\Calculator\Calculator\File.txt");
+            string fileName = @"C:\MyFiles\Calculator-Test-WorkBranch\Calculator\Calculator\File.txt";
+            string text = "";
+
+            text = calculator.ReadFromFile(fileName);
+
+            Assert.AreNotEqual(text, "");
+
+        }
+
+        [TestMethod]
+        public void IsMultiplicationShouldWork()
+        {
+            CalculatorHelper calculator = new CalculatorHelper(@"C:\MyFiles\Calculator-Test-WorkBranch\Calculator\Calculator\File.txt");
+            char op = '*';
+
+            Assert.AreEqual(calculator.IsMultiplication(op), true);
+        }
+
+        [TestMethod]
+        public void TreatMultiplicationAndDivideCaseTest()
+        {
+            CalculatorHelper calculator = new CalculatorHelper(@"C:\MyFiles\Calculator-Test-WorkBranch\Calculator\Calculator\File.txt");
+            Calculator.Calculator calculatorOperations = new Calculator.Calculator();
+
+            List<char> Operators = new List<char>();
+            Operators.Add('+');
+            Operators.Add('/');
+            Operators.Add('-');
+            Operators.Add('*');
+
+            calculator.Operators = Operators;
+
+            Operators.RemoveAt(1);
+            Operators.RemoveAt(2);
+
+            List<double> Numbers = new List<double>();
+            Numbers.Add(12);
+            Numbers.Add(4);
+            Numbers.Add(2);
+            Numbers.Add(5);
+            Numbers.Add(1);
+
+            calculator.Numbers = Numbers;
+
+            Numbers[1] = 2;
+            Numbers.RemoveAt(2);
+            Numbers.RemoveAt(3);
+
+            calculator.TreatMultiplicationCase(calculatorOperations);
+
+            Assert.AreEqual(Numbers, calculator.Numbers);
+            Assert.AreEqual(Operators, calculator.Operators);
+
+        }
+
+        [TestMethod]
+        public void CalculateShouldWorkCorrectly()
+        {
+            CalculatorHelper calculator = new CalculatorHelper(@"C:\MyFiles\Calculator-Test-WorkBranch\Calculator\Calculator\File.txt");
+            Calculator.Calculator calculatorOperations = new Calculator.Calculator();
+
+            List<char> Operators = new List<char>();
+            Operators.Add('+');
+            Operators.Add('/');
+            Operators.Add('-');
+            Operators.Add('*');
+            calculator.Operators = Operators;
+
+            List<double> Numbers = new List<double>();
+            Numbers.Add(12);
+            Numbers.Add(4);
+            Numbers.Add(2);
+            Numbers.Add(5);
+            Numbers.Add(1);
+            calculator.Numbers = Numbers;
+
+            calculator.Calculate(calculatorOperations);
+
+            Assert.AreEqual(calculator.Numbers[0], 9);
+        }
+
+        [TestMethod]
+        public void GetResultMethodShouldReturnTheFirstValueOfTheList()
+        {
+            CalculatorHelper calculator = new CalculatorHelper(@"C:\MyFiles\Calculator-Test-WorkBranch\Calculator\Calculator\File.txt");
+            Calculator.Calculator calculatorOperations = new Calculator.Calculator();
+
+            List<double> Numbers = new List<double>();
+            Numbers.Add(12);
+            Numbers.Add(4);
+            Numbers.Add(2);
+            calculator.Numbers = Numbers;
+
+            Assert.AreEqual(Numbers[0], calculator.Numbers[0]);
+        }
     }
 }

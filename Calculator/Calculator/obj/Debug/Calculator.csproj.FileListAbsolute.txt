@@ -12,3 +12,10 @@ C:\Users\Adriana\Desktop\CalculatorForTesting\Calculator\Calculator\obj\Debug\Ca
 C:\Users\Adriana\Desktop\CalculatorForTesting\Calculator\Calculator\obj\Debug\Calculator.csproj.CoreCompileInputs.cache
 C:\Users\Adriana\Desktop\CalculatorForTesting\Calculator\Calculator\obj\Debug\Calculator.exe
 C:\Users\Adriana\Desktop\CalculatorForTesting\Calculator\Calculator\obj\Debug\Calculator.pdb
+C:\MyFiles\CalculatorGIT\CalculatorForTesting\Calculator\Calculator\bin\Debug\Calculator.exe.config
+C:\MyFiles\CalculatorGIT\CalculatorForTesting\Calculator\Calculator\bin\Debug\Calculator.exe
+C:\MyFiles\CalculatorGIT\CalculatorForTesting\Calculator\Calculator\bin\Debug\Calculator.pdb
+C:\MyFiles\CalculatorGIT\CalculatorForTesting\Calculator\Calculator\obj\Debug\Calculator.csprojAssemblyReference.cache
+C:\MyFiles\CalculatorGIT\CalculatorForTesting\Calculator\Calculator\obj\Debug\Calculator.csproj.CoreCompileInputs.cache
+C:\MyFiles\CalculatorGIT\CalculatorForTesting\Calculator\Calculator\obj\Debug\Calculator.exe
+C:\MyFiles\CalculatorGIT\CalculatorForTesting\Calculator\Calculator\obj\Debug\Calculator.pdb

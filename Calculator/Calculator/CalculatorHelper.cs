@@ -49,11 +49,12 @@ namespace Calculator
         {
            FirstNumberIsNegative = input[0].Equals('-');
         }
-        public void ValidateInput(String input) //Lorena
+        public bool ValidateInput(String input) //Lorena
         {
             Regex objExpressionPattern = new Regex(@"[0-9+*,.-/]");
             if (!objExpressionPattern.IsMatch(input))
                 throw new Exception("Invalid input format!");
+            return true;
         }
         public void CreateOperatorsList(String input)  //Lorena
         {

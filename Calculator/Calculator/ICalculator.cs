@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Calculator
 {
-    public interface IOperations
+    public interface ICalculator
     {
         double Add(double number1, double number2);
         double Substraction(double number1, double number2);

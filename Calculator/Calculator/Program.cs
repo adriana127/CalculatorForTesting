@@ -13,7 +13,7 @@ namespace Calculator
         {
             try
             {
-                CalculatorHelper calculatorHelper = new CalculatorHelper(@"C:\Users\Adriana\Desktop\CalculatorForTesting\Calculator\Calculator\File.txt");
+                CalculatorHelper calculatorHelper = new CalculatorHelper(@"C:\MyFiles\CalculatorGIT\CalculatorForTesting\Calculator\Calculator\File.txt");
                 Calculator calculator = new Calculator();
 
                 Console.WriteLine(calculatorHelper.Operators.Count);
@@ -23,7 +23,7 @@ namespace Calculator
             {
                 Console.WriteLine(e.Message);
             }
-
+            Console.ReadKey();
         }
     }
 }
