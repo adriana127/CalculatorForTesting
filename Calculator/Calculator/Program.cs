@@ -14,8 +14,9 @@ namespace Calculator
             try
             {
                 CalculatorHelper calculatorHelper = new CalculatorHelper(@"C:\Users\Adriana\Desktop\CalculatorForTesting\Calculator\Calculator\File.txt");
-                calculatorHelper.Calculate();
-                Console.WriteLine(calculatorHelper.GetResult());
+                Calculator calculator = new Calculator();
+
+                Console.WriteLine(calculatorHelper.Operators.Count);
 
             }
             catch (Exception e)

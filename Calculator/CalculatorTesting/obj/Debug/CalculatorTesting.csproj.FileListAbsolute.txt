@@ -32,3 +32,11 @@ C:\Users\Adriana\Desktop\CalculatorForTesting\Calculator\CalculatorTesting\obj\D
 C:\Users\Adriana\Desktop\CalculatorForTesting\Calculator\CalculatorTesting\obj\Debug\CalculatorTesting.csproj.CopyComplete
 C:\Users\Adriana\Desktop\CalculatorForTesting\Calculator\CalculatorTesting\obj\Debug\CalculatorTesting.dll
 C:\Users\Adriana\Desktop\CalculatorForTesting\Calculator\CalculatorTesting\obj\Debug\CalculatorTesting.pdb
+C:\Users\Adriana\Desktop\CalculatorForTesting\Calculator\CalculatorTesting\bin\Debug\Castle.Core.dll
+C:\Users\Adriana\Desktop\CalculatorForTesting\Calculator\CalculatorTesting\bin\Debug\Moq.dll
+C:\Users\Adriana\Desktop\CalculatorForTesting\Calculator\CalculatorTesting\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+C:\Users\Adriana\Desktop\CalculatorForTesting\Calculator\CalculatorTesting\bin\Debug\System.Threading.Tasks.Extensions.dll
+C:\Users\Adriana\Desktop\CalculatorForTesting\Calculator\CalculatorTesting\bin\Debug\Castle.Core.xml
+C:\Users\Adriana\Desktop\CalculatorForTesting\Calculator\CalculatorTesting\bin\Debug\Moq.xml
+C:\Users\Adriana\Desktop\CalculatorForTesting\Calculator\CalculatorTesting\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
+C:\Users\Adriana\Desktop\CalculatorForTesting\Calculator\CalculatorTesting\bin\Debug\System.Threading.Tasks.Extensions.xml

@@ -17,13 +17,41 @@ namespace Calculator
         public List<double> Numbers { get => numbers; set => numbers = value; }
         public bool FirstNumberIsNegative { get => firstNumberIsNegative; set => firstNumberIsNegative = value; }
 
+        public CalculatorHelper(String fileName) //Adriana
+        {
+            if(fileName==null)
+            throw new ArgumentNullException("File Is Null");
+            try
+            {
+                ValidateInput(ReadFromFile(fileName));
+                string fileContent = EliminateWhiteSpaces(ReadFromFile(fileName));
+                VerifyFirstNumberSign(fileContent);
+
+                CreateOperatorsList(fileContent);
+
+                CreateNumbersList(fileContent.Split(new char[] { '-', '+', '/', '*' }));
+
+                VerifyNumberOfOperators();
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.Message);
+            }
+        }
+        public CalculatorHelper() { }
+
+        public String EliminateWhiteSpaces(String input)
+        {
+            return String.Join("", input.Split(' '));
+        }
+
         public void VerifyFirstNumberSign(String input) //Adriana
         {
            FirstNumberIsNegative = input[0].Equals('-');
         }
         public void ValidateInput(String input) //Lorena
         {
-            Regex objExpressionPattern = new Regex(@"^-?\d+(\s*[-+*/]\s*\d+)+$");
+            Regex objExpressionPattern = new Regex(@"[0-9+*,.-/]");
             if (!objExpressionPattern.IsMatch(input))
                 throw new Exception("Invalid input format!");
         }
@@ -79,28 +107,11 @@ namespace Calculator
             if (Operators.Count == Numbers.Count)
                 Operators.Remove(Operators.ElementAt(Operators.Count - 1));
         }
-        public CalculatorHelper(String fileName) //Adriana
-        {
-            try
-            {
-                //ValidateInput(ReadFromFile(fileName));
-
-                VerifyFirstNumberSign(ReadFromFile(fileName));
-
-                CreateOperatorsList(ReadFromFile(fileName));
-
-                CreateNumbersList(ReadFromFile(fileName).Split(new char[] { '-', '+', '/', '*' }));
-
-                VerifyNumberOfOperators();
-            }
-            catch (Exception e)
-            {
-                Console.WriteLine(e.Message);
-            }
-        }
+        
         public string ReadFromFile(String fileName) //Lorena
         {
-            if (!File.Exists(fileName)) throw new FileNotFoundException("File not found.");
+            if (fileName == null) throw new ArgumentNullException("Null path found.");
+            else if (!File.Exists(fileName)) throw new FileNotFoundException("File not found.");
             return System.IO.File.ReadAllText(fileName);
         }
         public bool IsMultiplication(char operation) //Lorena
